@@ -1,0 +1,51 @@
+.sidebar-container {
+    height: 100%;
+    width: 275px;
+    font-family: "Ubuntu", sans-serif;
+    background-color: #006769;
+}
+.sidebar-container .header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("../img/sidebar.jpg");
+    background-size: contain;
+}
+.dashboard-container,
+.medical-container {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: solid;
+    border-color: rgba(255, 255, 255, 0.55);
+    border-width: 0.1em;
+    color: white;
+}
+.register-container{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    padding-left: 20px;
+    color: white;
+}
+.sidebar-container .body-container div > .title-container {
+    margin-left: 15px;
+}
+.register-item-container {
+    font-size: 13.5px;
+    margin-top: -20px;
+    padding: 10px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid;
+    border-color: rgba(255, 255, 255, 0.55);
+    border-width: 0.1em;
+}
+.register-item-container a{
+    margin-bottom: 10px;
+}

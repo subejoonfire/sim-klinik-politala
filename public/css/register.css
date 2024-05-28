@@ -1,0 +1,98 @@
+.content-container{
+    overflow: hidden    ;
+}
+.content-container > .header-container {
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+}
+.content-container > .header-container .add-container {
+    margin-left: 20px;
+    display: flex;
+    width: 230px;
+    justify-content: space-between;
+}
+.content-container > .header-container .search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+}
+.content-container > .header-container .search-container .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.content-container > .header-container .search-container .input-container div {
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+}
+.content-container
+    > .header-container
+    .search-container
+    .input-container
+    input {
+    height: 28px;
+    padding-left: 10px;
+}
+.content-container
+    > .header-container
+    .search-container
+    .input-container
+    input:focus {
+    outline: none;
+}
+.content-container > .header-container .search-container .button-container {
+    display: flex;
+    width: 500px;
+}
+.content-container
+    > .header-container
+    .search-container
+    .button-container
+    .search-button
+    button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 35px;
+    border: none;
+    background-color: rgb(28, 182, 28);
+    color: white;
+    border-radius: 5px;
+    font-family: "Ubuntu", sans-serif;
+}
+.content-container > .header-container .add-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 35px;
+    border: none;
+    background-color: #2289ff;
+    color: white;
+    border-radius: 5px;
+    font-family: "Ubuntu", sans-serif;
+}
+tbody .add-button {
+    color: white;
+    background-color: rgb(28, 182, 28);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13;
+    border-radius: 5px;
+}
+tbody .edit-button {
+    color: green;
+}
+tbody tr td{
+    height: 50px;
+}
