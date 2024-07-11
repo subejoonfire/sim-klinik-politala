@@ -59,6 +59,19 @@ Route::group(['middleware' => 'auth'], function () {
         });
         Route::group(['prefix' => 'medical-record', 'as' => 'medical-record'], function () {
             Route::get('/', function () {
+                session()->put('medical-record-container', 'history-visit');
+                return view('admin/medical-record/index');
+            });
+            Route::get('/history-visit', function () {
+                session()->put('medical-record-container', 'history-visit');
+                return view('admin/medical-record/index');
+            });
+            Route::get('/general-data-test', function () {
+                session()->put('medical-record-container', 'general-data-test');
+                return view('admin/medical-record/index');
+            });
+            Route::get('/agreed-general', function () {
+                session()->put('medical-record-container', 'agreed-general');
                 return view('admin/medical-record/index');
             });
         });

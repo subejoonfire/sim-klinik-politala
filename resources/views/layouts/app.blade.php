@@ -80,6 +80,112 @@
         </div>
     </div>
 @endsection
+@section('medical-record-sidebar')
+    <div class="sidebar-data-container">
+        <div class="history-visit">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/history-visit') }}">Riwayat Kunjungan</a>
+        </div>
+        <div class="general-data-test">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/general-data-test') }}">Pengkajian Data Umum</a>
+        </div>
+        <div class="agreed-general">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/agreed-general') }}">Persetujuan Umum</a>
+        </div>
+        <div class="risk-test">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/risk-test') }}">Pengkajian Risiko Jatuh</a>
+        </div>
+        <div class="informed-consent">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/informed-consent') }}">Persetujuan Informasi</a>
+        </div>
+        <div class="agreed-satu-sehat">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/agreed-satu-sehat') }}">Persetujuan Satu Sehat</a>
+        </div>
+        <div class="general-signs">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/general-signs') }}">Tanda-Tanda Umum</a>
+        </div>
+        <div class="action-need">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/action-need') }}">Tindakan</a>
+        </div>
+        <div class="SOAP">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/SOAP') }}">SOAP</a>
+        </div>
+        <div class="CPPT">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/CPPT') }}">CPPT</a>
+        </div>
+        <div class="patient-status">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/patient-status') }}">Status Pasien</a>
+        </div>
+        <div class="surgical-safety-checklist">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/surgical-safety-checklist') }}">Daftar Periksa Keselamatan Operasi</a>
+        </div>
+        <div class="odontogram">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/odontogram') }}">Odontogram</a>
+        </div>
+        <div class="medical-support">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/medical-support') }}">Penunjang Medis</a>
+        </div>
+        <div class="MCU">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/MCU') }}">MCU</a>
+        </div>
+        <div class="medition-recipe">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/medition-recipe') }}">Resep dan Obat</a>
+        </div>
+        <div class="bill-total">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <a href="{{ url('admin/medical-record/bill-total') }}">Total Pembayaran</a>
+        </div>
+    </div>
+@endsection
 @section('footer')
     <script>
         const registerButton = document.getElementById('registerButton');

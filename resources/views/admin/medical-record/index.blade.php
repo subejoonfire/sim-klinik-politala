@@ -1,10 +1,15 @@
 @include('layouts.app')
+@include('layouts.medical-record')
 <html lang="en">
 
 <head>
     @yield('header')
     <title>SIM Klinik | e-Rekam Medis</title>
     <link rel="stylesheet" href="{{ url('css/medical-record/index.css') }}">
+    <link rel="stylesheet" href="{{ url('css/register.css') }}">
+    @if (session('medical-record-container') == 'general-data-test')
+        <link rel="stylesheet" href="{{ url('css/medical-record/general-data-test.css') }}">
+    @endif
 </head>
 
 <body>
@@ -55,7 +60,8 @@
                                             <button type="button">
                                                 <span class="material-symbols-outlined">
                                                     visibility
-                                                </span>Tampilkan</button>
+                                                </span>Tampilkan
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -70,7 +76,8 @@
                         </div>
                         <div class="identity-patient-body-container">
                             <div class="profile-container">
-                                <img src="{{ url('/img/female-icon.png') }}" alt="" width="200px" height="200px">
+                                <img src="{{ url('/img/female-icon.png') }}" alt="" width="200px"
+                                    height="200px">
                                 <br>
                                 <span>MR : 0001</span>
                                 <br>
@@ -127,7 +134,21 @@
                             <h1>Data Pasien</h1>
                         </div>
                         <div class="data-patient-body-container">
-                            <h1>halo</h1>
+                            @yield('medical-record-sidebar')
+                            <div class="medical-record-container">
+                                <div class="clinic-summary-container"></div>
+                                <div class="patient-data-container">
+                                    @if (session('medical-record-container') == 'history-visit')
+                                        @yield('history-visit')
+                                    @endif
+                                    @if (session('medical-record-container') == 'general-data-test')
+                                        @yield('general-data-test')
+                                    @endif
+                                    @if (session('medical-record-container') == 'agreed-general')
+                                        @yield('agreed-general')
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

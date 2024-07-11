@@ -1,0 +1,140 @@
+body {
+    overflow-x: hidden;
+}
+.content-container .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+}
+.input-container table tbody tr td,
+.modal table tbody tr td {
+    border-bottom: none;
+    padding-left: 40px;
+}
+.input-container {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.input-container select,
+.modal select {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+.button {
+    display: flex;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(28, 182, 28);
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+}
+.body-container table .material-symbols-outlined {
+    color: black;
+}
+.modal {
+    font-family: 'Open Sans', sans-serif;
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    border-radius: 10px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    background-color: #006769;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.modal-body .schedule-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day-container {
+    display: flex;
+    align-items: center;
+}
+
+.day-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.time-container {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-container label {
+    margin-bottom: 10px;
+}
+
+.time-container input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #006769;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}

@@ -3,6 +3,12 @@
     margin: 0;
     font-family: "Roboto", sans-serif;
 }
+body{
+    background-image: url('../img/walpaper-login.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 .container {
     width: 100%;
     height: 100%;
@@ -11,6 +17,7 @@
     align-items: center;
 }
 .box-container {
+    background-color: white;
     width: 900px;
     height: 600px;
     display: flex;

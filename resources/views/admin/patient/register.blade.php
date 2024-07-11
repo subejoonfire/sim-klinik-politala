@@ -79,9 +79,12 @@
                                 <td>640292281729984</td>
                                 <td>NO BPJS</td>
                                 <td>AGAMA</td>
-                                <td><a href="" class="add-button"><span class="material-symbols-outlined">
+                                <td>
+                                    <a href="" class="add-button">
+                                        <span class="material-symbols-outlined">
                                             add
-                                        </span> Tambah</a></td>
+                                        </span>Tambah</a>
+                                </td>
                                 <td>
                                     <a class="material-symbols-outlined edit-button">
                                         edit
