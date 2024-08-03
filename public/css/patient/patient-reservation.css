@@ -1,0 +1,122 @@
+body {
+    overflow-x: hidden;
+}
+
+.content-container .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.input-container table tbody tr td {
+    border-bottom: none;
+    padding-left: 40px;
+}
+
+.input-container {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container select {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.button {
+    display: flex;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(28, 182, 28);
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+}
+.conf-button,
+.cancel-button,
+.skip-button {
+    display: inline-flex;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Konfirmasi Button */
+.conf-button {
+    background-color: #28a745; /* Green */
+}
+
+.conf-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* Registrasi Button */
+.cancel-button {
+    background-color: #ff000d; /* Blue */
+}
+
+.cancel-button:hover {
+    background-color: #d11818; /* Darker blue */
+}
+
+/* Lewati Button */
+.skip-button {
+    background-color: #dcce35; /* Red */
+}
+
+.skip-button:hover {
+    background-color: #c2c823; /* Darker red */
+}
+.body-container table .material-symbols-outlined {
+    color: black;
+}
+
+.input {
+    height: 28px;
+    padding-left: 10px;
+}
+
+.input:focus {
+    outline: none;
+}
+.suggestions {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow-y: auto;
+    position: absolute;
+    background: white;
+    width: 215px;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 12px;
+    border-radius: 5px;
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestion-item:hover {
+    background: #eee;
+}

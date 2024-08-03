@@ -1,0 +1,210 @@
+.content-container {
+    overflow: hidden;
+}
+.content-container > .header-container {
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+}
+.content-container > .header-container .add-container {
+    margin-left: 20px;
+    display: flex;
+    width: 230px;
+    justify-content: space-between;
+}
+.content-container > .header-container .search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+}
+.content-container > .header-container .search-container .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.content-container > .header-container .search-container .input-container div {
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+}
+.content-container
+    > .header-container
+    .search-container
+    .input-container
+    input {
+    height: 28px;
+    padding-left: 10px;
+}
+.content-container
+    > .header-container
+    .search-container
+    .input-container
+    input:focus {
+    outline: none;
+}
+.content-container > .header-container .search-container .button-container {
+    display: flex;
+    transform: translateY(-50px);
+}
+.content-container
+    > .header-container
+    .search-container
+    .button-container
+    .search-button
+    button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 35px;
+    border: none;
+    background-color: rgb(28, 182, 28);
+    color: white;
+    border-radius: 5px;
+    font-family: "Ubuntu", sans-serif;
+}
+.content-container > .header-container .add-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 35px;
+    border: none;
+    background-color: #2289ff;
+    color: white;
+    border-radius: 5px;
+    font-family: "Ubuntu", sans-serif;
+}
+tbody .add-button {
+    color: white;
+    background-color: rgb(28, 182, 28);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13;
+    border-radius: 5px;
+}
+tbody .edit-button {
+    color: green;
+}
+tbody tr td {
+    height: 50px;
+}
+
+/* Add some basic styling to the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Lato", sans-serif;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add some basic styling to the form */
+.form-container {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the buttons */
+.modal .button-container {
+    margin-top: 20px;
+}
+
+.modal .button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal .button:hover {
+    background-color: #3e8e41;
+}
+
+.called-button {
+    color: white;
+    background-color: #3e8e41;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.waiting-button {
+    color: white;
+    background-color: rgb(223, 197, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.done-button {
+    color: white;
+    background-color: #3e8e41;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/* Make the form responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+    }
+}

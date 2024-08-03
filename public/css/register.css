@@ -1,5 +1,6 @@
-.content-container{
-    overflow: hidden    ;
+/* General Styling */
+.content-container {
+    overflow: hidden;
 }
 .content-container > .header-container {
     font-family: "Lato", sans-serif;
@@ -19,19 +20,6 @@
     justify-content: space-between;
     height: 130px;
 }
-.content-container > .header-container .search-container .input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 400px;
-    margin-bottom: 20px;
-}
-.content-container > .header-container .search-container .input-container div {
-    display: flex;
-    justify-content: space-between;
-    width: 275px;
-}
 .content-container
     > .header-container
     .search-container
@@ -47,26 +35,10 @@
     input:focus {
     outline: none;
 }
-.content-container > .header-container .search-container .button-container {
+.nomr-container{
     display: flex;
-    width: 500px;
-}
-.content-container
-    > .header-container
-    .search-container
-    .button-container
-    .search-button
-    button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 115px;
-    height: 35px;
-    border: none;
-    background-color: rgb(28, 182, 28);
-    color: white;
-    border-radius: 5px;
-    font-family: "Ubuntu", sans-serif;
+    width: 430px;
+    justify-content: space-between;
 }
 .content-container > .header-container .add-container button {
     display: flex;
@@ -80,19 +52,41 @@
     border-radius: 5px;
     font-family: "Ubuntu", sans-serif;
 }
-tbody .add-button {
+.add-button {
+    border: none;
     color: white;
     background-color: rgb(28, 182, 28);
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13;
+    font-size: 13px;
     border-radius: 5px;
 }
+.input {
+    height: 28px;
+    padding-left: 10px;
+}
+.input:focus {
+    outline: none;
+}
+
 tbody .edit-button {
     color: green;
 }
-tbody tr td{
+tbody tr td {
     height: 50px;
+}
+
+/* Make the form responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+    }
 }

@@ -6,6 +6,7 @@
     @yield('header')
     <title>SIM Klinik | Pendaftaran</title>
     <link rel="stylesheet" href="{{ url('css/register.css') }}">
+    <link rel="stylesheet" href="{{ url('css/modal.css') }}">
     {{-- <link rel="stylesheet" href="{{ url('css/header.css') }}"> --}}
 </head>
 
@@ -15,34 +16,24 @@
         <div class="body-container">
             @yield('sidebar')
             <div class="content-container">
+                @if (session('success'))
+                    @yield('success')
+                @endif
+
+                @if (session('error'))
+                    @yield('error')
+                @endif
                 <div class="header-container">
                     <div class="search-container">
                         <div class="input-container">
                             <div class="nomr-container">
-                                <span>No. MR :</span>
-                                <input type="text" placeholder="Nomor MR">
-                            </div>
-                            <div class="name-container">
-                                <span>Nama :</span>
-                                <input type="text" placeholder="Nomor MR">
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <div class="search-button">
-                                <button type="submit"><span class="material-symbols-outlined">
-                                        search
+                                <span>Pencarian :</span>
+                                <input type="text" placeholder="Masukkan kata kunci">
+                                <button id="add-patient-btn" class="add-button " type="button"><span class="material-symbols-outlined">
+                                        add
                                     </span>
-                                    <span>Cari Pasien</span>
+                                    <span>Tambah Pasien</span>
                                 </button>
-                            </div>
-                            <div class="add-container">
-                                <form action="{{ url('/admin/add-patient') }}" method="get">
-                                    <button type="submit"><span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                        <span>Tambah Pasien</span>
-                                    </button>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -67,60 +58,79 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>000001</td>
-                                <td>12-11-1996</td>
-                                <td>HAMIM</td>
-                                <td>DESA PANJARATAN RT</td>
-                                <td>085751231122</td>
-                                <td>RIANA</td>
-                                <td>HAMIM</td>
-                                <td>640292281729984</td>
-                                <td>NO BPJS</td>
-                                <td>AGAMA</td>
-                                <td>
-                                    <a href="" class="add-button">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>Tambah</a>
-                                </td>
-                                <td>
-                                    <a class="material-symbols-outlined edit-button">
-                                        edit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>000001</td>
-                                <td>12-11-1996</td>
-                                <td>HAMIM</td>
-                                <td>DESA PANJARATAN RT</td>
-                                <td>085751231122</td>
-                                <td>RIANA</td>
-                                <td>HAMIM</td>
-                                <td>640292281729984</td>
-                                <td>NO BPJS</td>
-                                <td>AGAMA</td>
-                                <td><a href="" class="add-button"><span class="material-symbols-outlined">
-                                            add
-                                        </span> Tambah</a></td>
-                                <td>
-                                    <a class="material-symbols-outlined edit-button">
-                                        edit
-                                    </a>
-                                </td>
-                            </tr>
+                            @foreach ($data as $row)
+                                <tr>
+                                    <td>{{ $row->id_patient }}</td>
+                                    <td>{{ $row->mr }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($row->tgl_lahir)->format('d M Y') }}</td>
+                                    <td>{{ $row->nama }}</td>
+                                    <td>{{ $row->alamat }}</td>
+                                    <td>{{ $row->telp }}</td>
+                                    <td>{{ $row->nama_ibu }}</td>
+                                    <td>{{ $row->nama_ayah }}</td>
+                                    <td>{{ $row->nik }}</td>
+                                    <td>{{ $row->no_bpjs }}</td>
+                                    <td>{{ $row->agama }}</td>
+                                    <td>
+                                        <a href="" class="add-button">
+                                            <span class="material-symbols-outlined">
+                                                add
+                                            </span>Tambah</a>
+                                    </td>
+                                    <td>
+                                        <a id="edit-patient-btn" href="#"
+                                            class="material-symbols-outlined edit-button"
+                                            data-id="{{ $row->id_patient }}" data-mr="{{ $row->mr }}"
+                                            data-tgl_lahir="{{ $row->tgl_lahir }}" data-nama="{{ $row->nama }}"
+                                            data-alamat="{{ $row->alamat }}" data-telp="{{ $row->telp }}"
+                                            data-nama_ibu="{{ $row->nama_ibu }}"
+                                            data-nama_ayah="{{ $row->nama_ayah }}" data-nik="{{ $row->nik }}"
+                                            data-no_bpjs="{{ $row->no_bpjs }}" data-agama="{{ $row->agama }}">
+                                            edit
+                                        </a>
+                                        <a href="{{ url('admin/register/delete-patient/' . $row->id_patient) }}"
+                                            class="material-symbols-outlined" style="color: green">
+                                            delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    @yield('register-modal')
 </body>
+
 <footer>
     @yield('footer')
+    <script src="{{ url('js/register.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            var $searchInput = $('input[placeholder="Masukkan kata kunci"]');
+            var $tableRows = $('table tbody tr');
+
+            // Event listener for the search input
+            $searchInput.on('keyup', function() {
+                var searchText = $searchInput.val().toLowerCase();
+
+                // Loop through each table row
+                $tableRows.each(function() {
+                    var $row = $(this);
+                    var rowText = $row.text().toLowerCase();
+
+                    // Check if the row text contains the search text
+                    if (rowText.indexOf(searchText) > -1) {
+                        $row.show(); // Show row if text matches
+                    } else {
+                        $row.hide(); // Hide row if text does not match
+                    }
+                });
+            });
+        });
+    </script>
 </footer>
 
 </html>

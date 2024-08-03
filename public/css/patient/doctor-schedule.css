@@ -45,7 +45,7 @@ body {
     color: black;
 }
 .modal {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -137,4 +137,12 @@ body {
     text-align: center;
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
+}
+
+.input {
+    height: 28px;
+    padding-left: 10px;
+}
+.input:focus {
+    outline: none;
 }
