@@ -12,6 +12,7 @@ use App\Http\Controllers\QueueController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\DoctorScheduleController;
+use App\Http\Controllers\QuotaReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::group(['prefix' => 'doctor-schedule', 'as' => 'doctor-schedule'], function () {
                 Route::get('/', function () {
                     $data = Schedule::getScheduleWithDoctor();
-                    return view('admin/patient/doctor-schedule', compact('data', 'doctors'));
+                    return view('admin/patient/doctor-schedule', compact('data'));
                 });
                 Route::post('store', [DoctorScheduleController::class, 'store']);
                 Route::post('update', [DoctorScheduleController::class, 'update']);
@@ -178,6 +179,17 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/', function () {
                     $data = Quotas::get();
                     return view('admin/patient/quota-reservation', compact('data'));
+                });
+                Route::post('store', [QuotaReservationController::class, 'store']);
+                Route::post('update', [QuotaReservationController::class, 'update']);
+                Route::get('delete/{id_quota}', function ($id_quota) {
+                    $deleted = Quotas::find($id_quota)->delete();
+                    if ($deleted) {
+                        return redirect('admin/register/quota-reservation')->with('success', 'Berhasil menghapus kuota reservasi.');
+                    } else {
+                        return redirect('admin/register/quota-reservation')->with('error', 'Gagal menghapus kuota reservasi.');
+                    }
+                    return redirect('admin/register/quota-reservation');
                 });
             });
         });

@@ -29,7 +29,8 @@
                             <div class="nomr-container">
                                 <span>Pencarian :</span>
                                 <input type="text" placeholder="Masukkan kata kunci">
-                                <button id="add-patient-btn" class="add-button " type="button"><span class="material-symbols-outlined">
+                                <button id="add-patient-btn" class="add-button " type="button"><span
+                                        class="material-symbols-outlined">
                                         add
                                     </span>
                                     <span>Tambah Pasien</span>
@@ -107,30 +108,6 @@
 <footer>
     @yield('footer')
     <script src="{{ url('js/register.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            var $searchInput = $('input[placeholder="Masukkan kata kunci"]');
-            var $tableRows = $('table tbody tr');
-
-            // Event listener for the search input
-            $searchInput.on('keyup', function() {
-                var searchText = $searchInput.val().toLowerCase();
-
-                // Loop through each table row
-                $tableRows.each(function() {
-                    var $row = $(this);
-                    var rowText = $row.text().toLowerCase();
-
-                    // Check if the row text contains the search text
-                    if (rowText.indexOf(searchText) > -1) {
-                        $row.show(); // Show row if text matches
-                    } else {
-                        $row.hide(); // Hide row if text does not match
-                    }
-                });
-            });
-        });
-    </script>
 </footer>
 
 </html>

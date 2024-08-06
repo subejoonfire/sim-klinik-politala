@@ -1,10 +1,4 @@
 @extends('layouts.app')
-@php
-    use App\Models\Doctors;
-    use App\Models\Patients;
-    $patients = Patients::get();
-    $doctors = Doctors::get();
-@endphp
 @section('patient-reservation')
     <!-- Modal untuk menambah data -->
     <div class="modal" id="add-data-modal">
@@ -437,6 +431,139 @@
                 </div>
                 <div class="modal-footer">
                     <button class="button" type="submit" id="save-edit-data">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+@section('quota-reservation')
+    <div class="modal" id="add-quota-modal">
+        <form action="{{ url('admin/register/quota-reservation/store') }}" method="post">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Tambah Data Kuota Reservasi</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="service_name">Layanan</label>
+                        <select name="service_name" id="service_name" class="form-control">
+                            <option value="POLI GIGI">POLI GIGI</option>
+                            <option value="POLI BADAN">POLI BADAN</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor_name">Dokter</label>
+                        <select name="doctor_name" id="doctor_name" class="form-control">
+                            @foreach ($doctors as $doctor)
+                                <option value="{{ $doctor->id_doctor }}">{{ $doctor->doctor_username }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="practice_time">Praktek</label>
+                        <select name="practice_time" id="practice_time" class="form-control">
+                            <option value="PAGI">PAGI</option>
+                            <option value="SIANG">SIANG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">JENIS</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="BPJS">BPJS</option>
+                            <option value="NON-BPJS">NON-BPJS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="max-reservation">Maksimal Reservasi</label>
+                        <input type="number" name="max-reservation" id="max-reservation" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="type">HARI</label>
+                        <select id="type" name="day" class="form-control">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button" type="submit" id="save-data">Simpan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal" id="edit-quota-modal">
+        <form id="form-edit" action="{{ url('admin/register/quota-reservation/update/') }}" method="post">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-edit">&times;</span>
+                    <h2>Edit Data Kuota Reservasi</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit_quota_id">ID Kuota</label>
+                        <input type="number" readonly name="id_quota" id="edit_quota_id" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_service_name">Layanan</label>
+                        <select name="service_name" id="edit_service_name" class="form-control">
+                            <option value="POLI GIGI">POLI GIGI</option>
+                            <option value="POLI BADAN">POLI BADAN</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_doctor_name">Dokter</label>
+                        <select name="doctor_name" id="edit_doctor_name" class="form-control">
+                            <option value="">Pilih Dokter</option>
+                            <!-- Populate with doctors from the server -->
+                            @foreach ($doctors as $doctor)
+                                <option value="{{ $doctor->id_doctor }}">{{ $doctor->doctor_username }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_practice_time">Praktek</label>
+                        <select name="practice_time" id="edit_practice_time" class="form-control">
+                            <option value="PAGI">PAGI</option>
+                            <option value="SIANG">SIANG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_type">JENIS</label>
+                        <select name="type" id="edit_type" class="form-control">
+                            <option value="BPJS">BPJS</option>
+                            <option value="NON-BPJS">NON-BPJS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_max-reservation">Maksimal Reservasi</label>
+                        <input type="number" name="edit_max-reservation" id="edit_max-reservation"
+                            class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_day">HARI</label>
+                        <select name="day" id="edit_day" class="form-control">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button" type="submit" id="update-data">Simpan</button>
                 </div>
             </div>
         </form>

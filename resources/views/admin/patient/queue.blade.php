@@ -4,7 +4,7 @@
 
 <head>
     @yield('header')
-    <title>SIM Klinik | Pendaftaran</title>
+    <title>SIM Klinik | Antrian Pendaftaran</title>
     <link rel="stylesheet" href="{{ url('css/patient/queue.css') }}">
     <link rel="stylesheet" href="{{ url('css/modal.css') }}">
     {{-- <link rel="stylesheet" href="{{ url('css/header.css') }}"> --}}

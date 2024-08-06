@@ -52,7 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
             editForm.querySelector("#edit_nama_ayah").value = nama_ayah;
             editForm.querySelector("#edit_nik").value = nik;
             editForm.querySelector("#edit_no_bpjs").value = no_bpjs;
-            editForm.querySelector(`#edit_agama option[value="${agama}"]`).selected = true;
+            editForm.querySelector(
+                `#edit_agama option[value="${agama}"]`
+            ).selected = true;
 
             editModal.style.display = "block";
         });
@@ -69,7 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Search Functionality
-    var searchInput = document.querySelector('input[placeholder="Masukkan kata kunci"]');
+    var searchInput = document.querySelector(
+        'input[placeholder="Masukkan kata kunci"]'
+    );
     var tableRows = document.querySelectorAll("table tbody tr");
 
     searchInput.addEventListener("input", function () {
@@ -81,6 +85,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 row.style.display = ""; // Show row if text matches
             } else {
                 row.style.display = "none"; // Hide row if text does not match
+            }
+        });
+    });
+});
+$(document).ready(function () {
+    var $searchInput = $('input[placeholder="Masukkan kata kunci"]');
+    var $tableRows = $("table tbody tr");
+
+    $searchInput.on("keyup", function () {
+        var searchText = $searchInput.val().toLowerCase();
+        $tableRows.each(function () {
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+
+            if (rowText.indexOf(searchText) > -1) {
+                $row.show(); // Show row if text matches
+            } else {
+                $row.hide(); // Hide row if text does not match
             }
         });
     });

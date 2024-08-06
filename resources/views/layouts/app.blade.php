@@ -198,71 +198,59 @@
                     <h2>Tambah Pasien</h2>
                 </div>
                 <div class="modal-body">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="mr" class="form-label">No. MR :</label></td>
-                                <td><input type="text" id="mr" readonly class="form-input" placeholder="AUTO">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label for="tgl_lahir" class="form-label">TGL LAHIR :</label></td>
-                                <td><input type="date" id="tgl_lahir" name="tgl_lahir" class="form-input"
-                                        placeholder="Tanggal Lahir"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="nama" class="form-label">NAMA PASIEN :</label></td>
-                                <td><input type="text" id="nama" name="nama" class="form-input"
-                                        placeholder="Nama Pasien"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="alamat" class="form-label">ALAMAT :</label></td>
-                                <td><input type="text" id="alamat" name="alamat" class="form-input"
-                                        placeholder="Alamat"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="telp" class="form-label">TELP :</label></td>
-                                <td><input type="text" id="telp" name="telp" class="form-input"
-                                        placeholder="Telepon"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="nama_ibu" class="form-label">NAMA IBU :</label></td>
-                                <td><input type="text" id="nama_ibu" name="nama_ibu" class="form-input"
-                                        placeholder="Nama Ibu"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="nama_ayah" class="form-label">NAMA AYAH :</label></td>
-                                <td><input type="text" id="nama_ayah" name="nama_ayah" class="form-input"
-                                        placeholder="Nama Ayah"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="nik" class="form-label">NIK :</label></td>
-                                <td><input type="text" id="nik" name="nik" class="form-input"
-                                        placeholder="NIK"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="no_bpjs" class="form-label">NO BPJS :</label></td>
-                                <td><input type="text" id="no_bpjs" name="no_bpjs" class="form-input"
-                                        placeholder="No BPJS"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="agama" class="form-label">AGAMA :</label></td>
-                                <td>
-                                    <select id="agama" name="agama" class="form-input">
-                                        <option value="Islam">Islam</option>
-                                        <option value="Kristen">Kristen</option>
-                                        <option value="Katolik">Katolik</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Buddha">Buddha</option>
-                                        <option value="Konghucu">Konghucu</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="modal-footer">
-                        <button class="button" type="submit">Tambah Pasien</button>
+                    <div class="form-group">
+                        <label for="mr" class="form-label">No. MR :</label>
+                        <input type="text" id="mr" readonly class="form-input" placeholder="AUTO">
                     </div>
+                    <div class="form-group">
+                        <label for="tgl_lahir" class="form-label">TGL LAHIR :</label>
+                        <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-input"
+                            placeholder="Tanggal Lahir">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama" class="form-label">NAMA PASIEN :</label>
+                        <input type="text" id="nama" name="nama" class="form-input"
+                            placeholder="Nama Pasien">
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat" class="form-label">ALAMAT :</label>
+                        <input type="text" id="alamat" name="alamat" class="form-input" placeholder="Alamat">
+                    </div>
+                    <div class="form-group">
+                        <label for="telp" class="form-label">TELP :</label>
+                        <input type="text" id="telp" name="telp" class="form-input" placeholder="Telepon">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_ibu" class="form-label">NAMA IBU :</label>
+                        <input type="text" id="nama_ibu" name="nama_ibu" class="form-input" placeholder="Nama Ibu">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_ayah" class="form-label">NAMA AYAH :</label>
+                        <input type="text" id="nama_ayah" name="nama_ayah" class="form-input"
+                            placeholder="Nama Ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="nik" class="form-label">NIK :</label>
+                        <input type="text" id="nik" name="nik" class="form-input" placeholder="NIK">
+                    </div>
+                    <div class="form-group">
+                        <label for="no_bpjs" class="form-label">NO BPJS :</label>
+                        <input type="text" id="no_bpjs" name="no_bpjs" class="form-input" placeholder="No BPJS">
+                    </div>
+                    <div class="form-group">
+                        <label for="agama" class="form-label">AGAMA :</label>
+                        <select id="agama" name="agama" class="form-input">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="add-button" type="submit">Tambah Pasien</button>
                 </div>
             </div>
         </form>
@@ -273,80 +261,73 @@
         <form action="{{ url('admin/register/edit-patient') }}" method="post">
             @csrf
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Edit Pasien</h2>
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Edit Pasien</h2>
+                </div>
                 <div class="modal-body">
                     <input type="hidden" id="edit_id_patient" name="id_patient">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="edit_mr" class="form-label">No. MR :</label></td>
-                                <td><input type="text" id="edit_mr" readonly class="form-input"
-                                        placeholder="Nomor MR"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_tgl_lahir" class="form-label">TGL LAHIR :</label></td>
-                                <td><input type="date" id="edit_tgl_lahir" name="tgl_lahir" class="form-input"
-                                        placeholder="Tanggal Lahir"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_nama" class="form-label">NAMA PASIEN :</label></td>
-                                <td><input type="text" id="edit_nama" name="nama" class="form-input"
-                                        placeholder="Nama Pasien"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_alamat" class="form-label">ALAMAT :</label></td>
-                                <td><input type="text" id="edit_alamat" name="alamat" class="form-input"
-                                        placeholder="Alamat"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_telp" class="form-label">TELP :</label></td>
-                                <td><input type="text" id="edit_telp" name="telp" class="form-input"
-                                        placeholder="Telepon"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_nama_ibu" class="form-label">NAMA IBU :</label></td>
-                                <td><input type="text" id="edit_nama_ibu" name="nama_ibu" class="form-input"
-                                        placeholder="Nama Ibu"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_nama_ayah" class="form-label">NAMA AYAH :</label></td>
-                                <td><input type="text" id="edit_nama_ayah" name="nama_ayah" class="form-input"
-                                        placeholder="Nama Ayah"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_nik" class="form-label">NIK :</label></td>
-                                <td><input type="text" id="edit_nik" name="nik" class="form-input"
-                                        placeholder="NIK"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_no_bpjs" class="form-label">NO BPJS :</label></td>
-                                <td><input type="text" id="edit_no_bpjs" name="no_bpjs" class="form-input"
-                                        placeholder="No BPJS"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="edit_agama" class="form-label">AGAMA :</label></td>
-                                <td>
-                                    <select id="edit_agama" name="agama" data-default-value="" class="form-input">
-                                        <option value="Islam">Islam</option>
-                                        <option value="Kristen">Kristen</option>
-                                        <option value="Katolik">Katolik</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Buddha">Buddha</option>
-                                        <option value="Konghucu">Konghucu</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="modal-footer">
-                        <button class="button" type="submit">Edit Pasien</button>
+                    <div class="form-group">
+                        <label for="edit_mr" class="form-label">No. MR :</label>
+                        <input type="text" id="edit_mr" readonly class="form-input" placeholder="Nomor MR">
                     </div>
+                    <div class="form-group">
+                        <label for="edit_tgl_lahir" class="form-label">TGL LAHIR :</label>
+                        <input type="date" id="edit_tgl_lahir" name="tgl_lahir" class="form-input"
+                            placeholder="Tanggal Lahir">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_nama" class="form-label">NAMA PASIEN :</label>
+                        <input type="text" id="edit_nama" name="nama" class="form-input"
+                            placeholder="Nama Pasien">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_alamat" class="form-label">ALAMAT :</label>
+                        <input type="text" id="edit_alamat" name="alamat" class="form-input" placeholder="Alamat">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_telp" class="form-label">TELP :</label>
+                        <input type="text" id="edit_telp" name="telp" class="form-input" placeholder="Telepon">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_nama_ibu" class="form-label">NAMA IBU :</label>
+                        <input type="text" id="edit_nama_ibu" name="nama_ibu" class="form-input"
+                            placeholder="Nama Ibu">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_nama_ayah" class="form-label">NAMA AYAH :</label>
+                        <input type="text" id="edit_nama_ayah" name="nama_ayah" class="form-input"
+                            placeholder="Nama Ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_nik" class="form-label">NIK :</label>
+                        <input type="text" id="edit_nik" name="nik" class="form-input" placeholder="NIK">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_no_bpjs" class="form-label">NO BPJS :</label>
+                        <input type="text" id="edit_no_bpjs" name="no_bpjs" class="form-input"
+                            placeholder="No BPJS">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_agama" class="form-label">AGAMA :</label>
+                        <select id="edit_agama" name="agama" data-default-value="" class="form-input">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="add-button" type="submit">Edit Pasien</button>
+                </div>
+            </div>
         </form>
     </div>
-    </div>
-    </div>
 @endsection
+
 
 @section('footer')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

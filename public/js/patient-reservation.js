@@ -75,7 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
             editForm.querySelector("#edit_id_patient").value = idpatient;
             // Show the modal
             editModal.style.display = "block";
-            editForm.querySelector(`#edit_doctor option[value="${"" + doctor}"]`).selected = true;
+            editForm.querySelector(
+                `#edit_doctor option[value="${"" + doctor}"]`
+            ).selected = true;
         });
     });
 
@@ -89,5 +91,25 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target == editModal) {
             editModal.style.display = "none";
         }
+    });
+    const searchInput = document.querySelector(
+        'input[placeholder="Masukkan kata kunci"]'
+    );
+    const tableRows = document.querySelectorAll(
+        "#patient-reservation-table tbody tr"
+    );
+    searchInput.addEventListener("input", function () {
+        const searchText = searchInput.value.toLowerCase();
+
+        // Loop through each table row
+        tableRows.forEach(function (row) {
+            const rowText = row.textContent.toLowerCase();
+
+            if (rowText.includes(searchText)) {
+                row.style.display = ""; // Show row if text matches
+            } else {
+                row.style.display = "none"; // Hide row if text does not match
+            }
+        });
     });
 });

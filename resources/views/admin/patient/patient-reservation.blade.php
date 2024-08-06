@@ -4,12 +4,12 @@
 <head>
     @yield('header')
     <meta charset="UTF-8">
+    <title>SIM Klinik | Reservasi Pasien</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url('css/patient/patient-reservation.css') }}">
     <link rel="stylesheet" href="{{ url('css/modal.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <title>Jadwal Dokter</title>
 </head>
 
 <body>
@@ -141,22 +141,6 @@
     @yield('footer')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.querySelector('input[placeholder="Masukkan kata kunci"]');
-            const tableRows = document.querySelectorAll('#patient-reservation-table tbody tr');
-            searchInput.addEventListener('input', function() {
-                const searchText = searchInput.value.toLowerCase();
-
-                // Loop through each table row
-                tableRows.forEach(function(row) {
-                    const rowText = row.textContent.toLowerCase();
-
-                    if (rowText.includes(searchText)) {
-                        row.style.display = ''; // Show row if text matches
-                    } else {
-                        row.style.display = 'none'; // Hide row if text does not match
-                    }
-                });
-            });
             const patients = @json($patients); // Pass the patients data from Laravel to JavaScript
 
             function showSuggestions(input, suggestionsContainer, mrInput, id_patientt, phoneInput) {
